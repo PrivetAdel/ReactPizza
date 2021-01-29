@@ -4,7 +4,7 @@ const SortPopup = ({items}) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [acriveItem, setAcriveItem] = useState(0);
   const sortElement = useRef();
-  const activeLabel = items[acriveItem];
+  const activeLabel = items[acriveItem].name;
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup)
@@ -53,8 +53,8 @@ const SortPopup = ({items}) => {
               <li 
                 className={acriveItem === index ? 'active' : ''}
                 onClick={() => onSelectItem(index)}
-                key={`${item}_${index}`} >
-                {item}
+                key={`${item.type}_${index}`} >
+                {item.name}
               </li>
             ))}
           </ul>
